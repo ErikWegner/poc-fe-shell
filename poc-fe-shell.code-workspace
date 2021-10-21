@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "notifylib"
+		},
+		{
+			"path": "shellcomponents"
+		},
+		{
+			"path": "app"
+		}
+	],
+	"settings": {}
+}

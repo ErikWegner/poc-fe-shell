@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { addListener, Notification } from 'notifylib';
+import { addListener, Notification } from 'notifylib/dist';
 
 @Component({
   selector: 'app-shell-header',
   templateUrl: './shell-header.component.html',
-  styleUrls: ['./shell-header.component.scss']
+  styleUrls: ['./shell-header.component.scss'],
 })
 export class ShellHeaderComponent implements OnInit {
-
   public notification: Notification | null = null;
   public counter = 0;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    addListener((n) => {
+    addListener((n: Notification) => {
       this.notification = n;
       this.counter++;
     });
   }
-
 }

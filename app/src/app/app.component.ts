@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { addNotification } from 'notifylib';
+import { addNotification } from 'notifylib/dist/index';
 
 @Component({
   selector: 'app-root',
