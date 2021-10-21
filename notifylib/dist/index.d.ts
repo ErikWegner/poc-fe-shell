@@ -4,6 +4,7 @@ export interface Notification {
     text: string;
 }
 declare type NotificationListener = (notification: Notification) => void;
-export declare function addNotification(notification: Notification): void;
-export declare function addListener(listenerCallback: NotificationListener): void;
-export {};
+declare function addNotification(notification: Notification): void;
+export { addNotification };
+declare function addListener(listenerCallback: NotificationListener): void;
+export { addListener };

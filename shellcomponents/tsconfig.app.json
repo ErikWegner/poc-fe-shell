@@ -6,8 +6,9 @@
     "types": []
   },
   "files": [
+    "../notifylib/dist/index.d.ts",
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
   ],
   "include": [
     "src/**/*.d.ts"

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { addListener, Notification } from 'notifylib/dist';
 
 @Component({
   selector: 'app-shell-header',
