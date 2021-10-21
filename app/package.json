@@ -1,5 +1,5 @@
 {
-  "name": "shellcomponents",
+  "name": "app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -14,12 +14,10 @@
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
-    "@angular/elements": "^12.2.11",
     "@angular/forms": "~12.2.0",
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
-    "document-register-element": "^1.7.2",
     "notifylib": "file:../notifylib",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
