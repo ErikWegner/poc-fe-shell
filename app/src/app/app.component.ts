@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { addNotification } from 'notifylib';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  public notify(): void {
+    addNotification({
+      color: 'red',
+      heading: 'The inner component',
+      text: 'This is a message from the inner component'
+    });
+  }
 }
