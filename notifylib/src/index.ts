@@ -5,16 +5,32 @@ export interface Notification {
 }
 type NotificationListener = (notification: Notification) => void;
 
-const listeners: NotificationListener[] = [];
-
-function addNotification(notification: Notification): void {
-  listeners.forEach((receiver) => setTimeout(() => receiver(notification), 1)); // eslint-disable-line unicorn/no-array-for-each
+declare global {
+  interface Window {
+    _SC: {
+      addNotification: (notification: Notification) => void;
+      addListener: (listenerCallback: NotificationListener) => void;
+    };
+  }
 }
 
-export { addNotification };
+(function (SC) {
+  const listeners: NotificationListener[] = [];
 
-function addListener(listenerCallback: NotificationListener): void {
-  listeners.push(listenerCallback);
-}
+  function addNotification(notification: Notification): void {
+    listeners.forEach((receiver) =>
+      setTimeout(() => receiver(notification), 1)
+    ); // eslint-disable-line unicorn/no-array-for-each
+  }
 
-export { addListener };
+  function addListener(listenerCallback: NotificationListener): void {
+    listeners.push(listenerCallback);
+  }
+
+  if (!SC.addListener) {
+    SC.addNotification = addNotification;
+  }
+  if (!SC.addListener) {
+    SC.addListener = addListener;
+  }
+})(window._SC || ((window._SC as any) = {}));

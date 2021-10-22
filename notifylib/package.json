@@ -2,20 +2,24 @@
   "name": "notifylib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.ts",
+  "main": "dist/foo.js",
+  "umd:main": "dist/foo.umd.js",
+  "module": "dist/foo.m.js",
+  "exports": {
+    "require": "./dist/foo.js",
+    "default": "./dist/foo.modern.js"
+  },
+  "types": "dist/foo.d.ts",
   "scripts": {
-    "compile-tsc": "tsc",
-    "compile-babel": "babel src --out-dir lib",
+    "compile": "microbundle",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
     "@babel/preset-typescript": "^7.15.0",
-    "typescript": "^4.4.4"
+    "microbundle": "^0.14.1"
   }
 }
