@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Notification } from 'notifylib';
 
 @Component({
@@ -10,12 +10,14 @@ export class ShellHeaderComponent implements OnInit {
   public notification: Notification | null = null;
   public counter = 0;
 
-  constructor() {}
+  constructor(private ngZone: NgZone) {}
 
   ngOnInit(): void {
     window._SC.addListener((n: Notification) => {
-      this.notification = n;
-      this.counter++;
+      this.ngZone.run(() => {
+        this.notification = n;
+        this.counter++;
+      });
     });
   }
 }
