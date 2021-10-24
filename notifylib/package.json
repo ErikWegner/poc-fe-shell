@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "source": "src/index.ts",
-  "main": "dist/foo.js",
-  "umd:main": "dist/foo.umd.js",
-  "module": "dist/foo.m.js",
+  "main": "dist/notifylib.js",
+  "umd:main": "dist/notifylib.umd.js",
+  "module": "dist/notifylib.m.js",
   "exports": {
-    "require": "./dist/foo.js",
-    "default": "./dist/foo.modern.js"
+    "require": "./dist/notifylib.js",
+    "default": "./dist/notifylib.modern.js"
   },
-  "types": "dist/foo.d.ts",
+  "files": [
+    "dist/*",
+    "package.json"
+  ],
+  "types": "dist/index.d.ts",
   "scripts": {
     "compile": "microbundle",
     "test": "echo \"Error: no test specified\" && exit 1"

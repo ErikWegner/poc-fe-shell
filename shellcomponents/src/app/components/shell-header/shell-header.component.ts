@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Notification } from 'notifylib';
 
 @Component({
   selector: 'app-shell-header',
@@ -12,7 +13,7 @@ export class ShellHeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    addListener((n: Notification) => {
+    window._SC.addListener((n: Notification) => {
       this.notification = n;
       this.counter++;
     });
