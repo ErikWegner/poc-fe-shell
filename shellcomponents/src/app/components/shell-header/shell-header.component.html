@@ -1,2 +1,6 @@
 <p>Number of notifications: {{ counter }}</p>
-<div *ngIf="notification"><em>{{ notification.heading }}</em> {{notification.text}}</div>
+<ng-container *ngIf="notification">
+  <div [style.color]="notification.color">
+    <em>{{ notification.heading }}</em> {{ notification.text }}
+  </div>
+</ng-container>

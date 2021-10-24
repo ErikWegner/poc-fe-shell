@@ -1,9 +1,15 @@
 <shell-header></shell-header>
 <div class="flex">
-  <shell-navigation></shell-navigation>
-  <div>
-    <h1>Hello World</h1>
-    <button (click)="notify()">Create notification</button>
-  </div>
+  <shell-navigation>
+    <ul>
+      <li>
+        <a routerLink="/c1">C1</a>
+      </li>
+      <li>
+        <a routerLink="/c2">C2</a>
+      </li>
+    </ul>
+  </shell-navigation>
+  <router-outlet></router-outlet>
 </div>
 <shell-footer></shell-footer>
